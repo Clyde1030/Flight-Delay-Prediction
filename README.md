@@ -16,44 +16,29 @@ Unpredictable flight delays cost the U.S. economy billions of dollars annually b
 We identify a significant opportunity to use machine learning to predict departure delays before a flight reaches the gate. Early prediction enables airports, airlines, and passengers to manage expectations, reallocate resources, and respond proactively to operational disruptions.
 
 ### Key Problems Addressed
-
-Operational uncertainty: Airports struggle to anticipate delays caused by congestion, weather, and network effects.
-
-Reactive decision-making: Most mitigation actions occur after delays are already unfolding.
-
-Complex delay drivers: Delays are influenced by weather, temporal patterns, airline behavior, and network structure—making them difficult to model with simple rules.
+- Operational uncertainty: Airports struggle to anticipate delays caused by congestion, weather, and network effects.
+- Reactive decision-making: Most mitigation actions occur after delays are already unfolding.
+- Complex delay drivers: Delays are influenced by weather, temporal patterns, airline behavior, and network structure—making them difficult to model with simple rules.
 
 ### Why This Matters
-
-Airports & airlines can optimize gate usage, crew scheduling, and congestion mitigation.
-
-Passengers benefit from earlier alerts, alternative routing options, and improved travel experience.
-
-Operations teams gain decision support tools grounded in historical data and predictive signals.
+- Airports & airlines can optimize gate usage, crew scheduling, and congestion mitigation.
+- Passengers benefit from earlier alerts, alternative routing options, and improved travel experience.
+- Operations teams gain decision support tools grounded in historical data and predictive signals.
 
 ### So What?
-
 By accurately predicting departure delays ahead of time, this framework enables:
-
-Proactive operational planning
-
-Improved on-time performance metrics
-
-Reduced cascading delays across the airline network
+- Proactive operational planning
+- Improved on-time performance metrics
+- Reduced cascading delays across the airline network
 
 ## Data Structure Overview
-
-
 Using the U.S. Department of Transportation On-Time Performance dataset (2015–2019), integrated with NOAA weather data and airport metadata, we analyzed over 31 million flights and engineered more than 50 features capturing temporal patterns, congestion, weather, seasonality, operational disruptions, airline reputation, and network-based PageRank metrics.
 
-## Executive Summary
-
 ## Insights Deep Dive
-
-## Recommendations
+- Flight delay is highly correlated time variables such as time of day. Flight delays propagate such that late flights is 20% more likely to delay than early flights on average.
+- Weather and sky condition have small impact on flight delay. Even with obscured sky conditions, there is only 25% chance for a flight to delay.
 
 ## Project Abstract
-
 Exploratory analysis revealed that delays were rare but highly variable,highlighting both class imbalance and the importance of network- and weather-informed predictors. **In Phase 1**, exploratory data analysis showed strong correlations between delay duration and factors such as poor weather visibility, precipitation, congestion at major hubs, and peak-hour departures. We framed delay prediction as a binary classification task and selected Logistic Regression as the baseline model, with Random Forest and XGBoost identified as advanced modeling approaches. We also identified potential improvements through temporal features, route-based clustering, and real-time streaming predictions for airport operations dashboards. Model evaluation focused on Precision, Recall, and F1-score.
 
 **In Phase 2**, we performed detailed analysis on **one year of data (2015)**, consisting of 5.8 million flight records, to predict whether a departing flight would be delayed (DEP_DELAY_GROUP ≥ 1) or on-time (≤ 0). We established baseline models using a robust, multi-stage feature engineering pipeline that included data cleaning, categorical encoding, feature assembly, PCA, Lasso regularization, standardized scaling, and model training. **Logistic Regression achieved a baseline performance of 27% precision, 34% recall for the delayed class**, reflecting the impact of class imbalance. **Ensemble models significantly improved performance, with Random Forest achieving 78% precision, 70% recall, and XGBoost achieving 78% precision, 74% recall**. These results were obtained using three quarters of data for training and one quarter for testing. The primary challenge identified at this stage was scaling the pipeline to five years of data while implementing multi-fold, time-aware cross-validation and holding 2019 as a final test year.
