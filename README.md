@@ -6,8 +6,8 @@
 
 <p align="center">
   Check out our <a href="Presentation.pdf">presentation</a> &nbsp; | &nbsp;
-  Read our <a href="https://medium.com/@yushenglee/predicting-flight-delay-at-scale-dd314cb34e77">Medium article</a>
-  Read our <a href="Project%20Phase%203.ipynb">paper</a> &nbsp; | &nbsp;
+  Read our <a href="https://medium.com/@yushenglee/predicting-flight-delay-at-scale-dd314cb34e77">Medium article</a> &nbsp; | &nbsp;
+  Read our <a href="Project%20Phase%203.ipynb">paper</a>
 </p>
 
 ## Background And Overview
